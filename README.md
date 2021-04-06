@@ -6,7 +6,7 @@ This is a hobbyist project for trading homebrews (the malt+yeast kind, not the f
 
 ## Features
 
-*updated 2.04.2021*
+*updated 6.4.2021*
 
 ### User management
 
@@ -45,13 +45,14 @@ Express, Typescript, MongoDB Atlas, Mongoose, Passport.js
 
 Fully automated with [Github Actions](https://github.com/features/actions):
 
-On pushes/merges to main:
-- Install, lint and build front-end. Move build folder to back-end to be served via Express.
+On all pull requests:
+- Install, lint and build front-end. Move build folder to back-end to be served via Express for tests.
 - Install, lint, build and start back-end in test mode (with static front-end included)
 - Run full e2e tests with [Cypress](https://www.cypress.io/)
-- Deploy to [Heroku](https://www.heroku.com) staging. Revert to previous version on fail.
-- Run simple tests on staging with [Cypress](https://www.cypress.io/)
-- Deploy to [Heroku](https://www.heroku.com) live. Revert to previous version on fail.
+
+On pushes/merges to main:
+- Deploy back-end to [Heroku](https://www.heroku.com). Revert to previous version on fail.
+- Deploy front-end to [Azure Static Web Apps](https://azure.microsoft.com/en-us/services/app-service/static/)live. Revert to previous version on fail.
 - Bump version on success
 
 [pipeline.yml](/github/workflows/pipeline.yml) for full details
@@ -60,11 +61,9 @@ On pushes/merges to main:
 
 [Google Maps](https://developers.google.com/maps/documentation/javascript/overview), [Sendgrid](https://sendgrid.com/docs/api-reference/), [Cloudinary](https://cloudinary.com/documentation/image_upload_api_reference)
 
-# Deployed:
+# See it live:
 
 [homebrewswap.app](https://www.homebrewswap.app)
-
-Hosted on [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)
 
 
 
